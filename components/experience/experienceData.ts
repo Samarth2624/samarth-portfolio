@@ -28,17 +28,5 @@ export const experiences = [
     ],
   },
 
-  {
-    company: "Digital Marketing Internship",
-    role: "Marketing Intern",
-    duration: "2024",
-    description:
-      "Worked on digital marketing campaigns, SEO basics, and social media content strategy while improving communication skills.",
-    technologies: [
-      "SEO",
-      "Marketing",
-      "Content",
-      "Analytics",
-    ],
-  },
+  
 ];

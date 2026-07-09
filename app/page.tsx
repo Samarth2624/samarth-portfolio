@@ -2,83 +2,102 @@
 
 import { useState } from "react";
 
-import Background from "@/components/background/Background";
-import Stars from "@/components/background/Stars";
-import Scene from "@/components/three/Scene";
+import BootLoader from "@/components/loader/BootLoader";
 
-import Navbar from "@/components/navbar/Navbar";
-import Hero from "@/components/hero/Hero";
-
-import Cursor from "@/components/cursor/Cursor";
 import ScrollProgress from "@/components/effects/ScrollProgress";
 
-import BootLoader from "@/components/loader/BootLoader";
-import SystemOverview from "@/components/sections/SystemOverview";
-import Stats from "@/components/sections/Stats";
-import Projects from "@/components/projects/Projects";
-import CursorBeam from "@/components/ui/CursorBeam";
+import Navbar from "@/components/navbar/Navbar";
+
 import GridBackground from "@/components/background/GridBackground";
+
+import Scene from "@/components/three/Scene";
+
+import Hero from "@/components/hero/Hero";
+
+import Stats from "@/components/sections/Stats";
+
+import SystemOverview from "@/components/sections/SystemOverview";
+
+import Projects from "@/components/projects/Projects";
+
 import Terminal from "@/components/terminal/Terminal";
+
 import Skills from "@/components/skills/Skills";
+
 import Experience from "@/components/experience/Experience";
+
 import Education from "@/components/education/Education";
+
 import Certifications from "@/components/certifications/Certifications";
+
 import Resume from "@/components/resume/Resume";
+
 import Contact from "@/components/contact/Contact";
+
 import Footer from "@/components/footer/Footer";
-<>
-    <CursorBeam />
-    <GridBackground />
-
-    <Navbar />
-
-    <Background />
-
-    <Hero />
-
-    <Projects />
-    <Terminal />
-    <Skills />
-    <Experience />
-   <Education />
-   <Certifications />
-   <Resume />
-   <Contact />
-   <Footer />
-</>
+import Cursor from "@/components/cursor/Cursor";
 
 export default function Home() {
-  const [loaded, setLoaded] = useState(false);
 
-  return (
-    <>
-      {!loaded ? (
-        <BootLoader onComplete={() => setLoaded(true)} />
-      ) : (
-        <>
-          <ScrollProgress />
+const [loaded,setLoaded]=useState(false);
 
-          <Background />
+return(
 
-          <Scene />
+<>
 
-          <Stars />
+{
 
-          <Cursor />
+!loaded?
 
-          <Navbar />
+<BootLoader onComplete={()=>setLoaded(true)}/>
 
-         <main className="relative z-10">
-  <Hero />
+:
 
-<Stats />
+<>
 
-<SystemOverview />
+<ScrollProgress/>
 
-<Projects />
+<GridBackground/>
+
+<Scene/>
+
+<Navbar/>
+<Cursor/>
+
+<main className="relative z-10">
+
+<Hero/>
+
+<Stats/>
+
+<SystemOverview/>
+
+<Projects/>
+
+<Terminal/>
+
+<Skills/>
+
+<Experience/>
+
+<Education/>
+
+<Certifications/>
+
+<Resume/>
+
+<Contact/>
+
+<Footer/>
+
 </main>
-        </>
-      )}
-    </>
-  );
+
+</>
+
+}
+
+</>
+
+);
+
 }

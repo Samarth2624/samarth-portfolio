@@ -41,7 +41,7 @@ html,
 body{
   width:100%;
   overflow-x:hidden;
-  cursor:none;
+  cursor:auto;
 }
 
 /* ===========================
@@ -99,7 +99,7 @@ button{
 
   transition:all .35s ease;
 
-  cursor:none;
+  cursor:auto;
 
 }
 
@@ -273,12 +273,12 @@ html {
 }
 
 body {
-  cursor: none;
+  cursor: auto;
 }
 
 a,
 button {
-  cursor: none;
+  cursor: auto;
 }
 
 * {

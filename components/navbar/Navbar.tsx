@@ -30,38 +30,74 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("#about");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
+
+      const sections = navItems
+        .map((item) => document.querySelector(item.href))
+        .filter(Boolean) as HTMLElement[];
+
+      const scrollPosition = window.scrollY + 150;
+
+      for (const section of sections) {
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          setActive(`#${section.id}`);
+          break;
+        }
+      }
     };
+
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+
+    const element = document.querySelector(href);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    setMenuOpen(false);
+  };
+
   return (
     <>
       <motion.nav
-        initial={{ y: -100 }}
+        initial={{ y: -80 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.8 }}
-        className={`fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-full border transition-all duration-500
-        ${
+        transition={{ duration: 0.6 }}
+        className={`fixed left-1/2 top-5 z-50 w-[94%] max-w-7xl -translate-x-1/2 rounded-full border transition-all duration-300 ${
           scrolled
-            ? "border-cyan-400/20 bg-black/70 backdrop-blur-2xl shadow-[0_0_35px_rgba(0,217,255,.15)]"
-            : "border-white/10 bg-white/5 backdrop-blur-xl"
+            ? "border-cyan-400/20 bg-black/70 backdrop-blur-2xl shadow-[0_0_30px_rgba(0,217,255,.15)]"
+            : "border-white/10 bg-black/20 backdrop-blur-xl"
         }`}
       >
         <div className="flex items-center justify-between px-8 py-4">
-
           {/* Logo */}
 
           <motion.a
-            href="#"
+            href="#home"
             whileHover={{ scale: 1.05 }}
-            className="gradient-text text-xl font-black tracking-[6px]"
+            onClick={(e) => handleClick(e, "#home")}
+            className="gradient-text cursor-pointer text-xl font-black tracking-[6px]"
           >
             ECS
           </motion.a>
@@ -73,10 +109,13 @@ export default function Navbar() {
               <motion.a
                 key={item.label}
                 href={item.href}
-                whileHover={{
-                  y: -2,
-                }}
-                className="text-sm uppercase tracking-[2px] text-gray-300 transition hover:text-cyan-400"
+                onClick={(e) => handleClick(e, item.href)}
+                whileHover={{ y: -2 }}
+                className={`cursor-pointer text-sm uppercase tracking-[2px] transition ${
+                  active === item.href
+                    ? "text-cyan-400"
+                    : "text-gray-300 hover:text-cyan-400"
+                }`}
               >
                 {item.label}
               </motion.a>
@@ -87,22 +126,18 @@ export default function Navbar() {
 
           <motion.a
             href="/resume.pdf"
-            whileHover={{
-              scale: 1.05,
-            }}
-            whileTap={{
-              scale: 0.95,
-            }}
-            className="glass glow hidden items-center gap-2 rounded-full px-6 py-3 md:flex"
+            download
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="hidden items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-6 py-3 text-cyan-300 transition hover:border-cyan-400 hover:bg-cyan-500/20 md:flex"
           >
             <Download size={18} />
-
             <span className="font-semibold">
-              Firmware
+              Resume
             </span>
           </motion.a>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -116,30 +151,20 @@ export default function Navbar() {
       {/* Mobile Menu */}
 
       <AnimatePresence>
-
         {menuOpen && (
-
           <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 backdrop-blur-xl"
           >
             {navItems.map((item) => (
               <motion.a
                 key={item.label}
                 href={item.href}
-                whileHover={{
-                  scale: 1.08,
-                }}
-                onClick={() => setMenuOpen(false)}
-                className="text-3xl font-bold tracking-widest text-white"
+                onClick={(e) => handleClick(e, item.href)}
+                whileHover={{ scale: 1.05 }}
+                className="cursor-pointer text-3xl font-bold tracking-widest text-white hover:text-cyan-400"
               >
                 {item.label}
               </motion.a>
@@ -147,14 +172,14 @@ export default function Navbar() {
 
             <motion.a
               href="/resume.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
               className="rounded-full border border-cyan-400 px-8 py-4 text-cyan-400"
             >
-              Download Firmware
+              Download Resume
             </motion.a>
           </motion.div>
-
         )}
-
       </AnimatePresence>
     </>
   );
