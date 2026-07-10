@@ -1,53 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CircularProgress from "./CircularProgress";
 
 interface Props {
-  skill: {
-    title: string;
-    percentage: number;
-    color: string;
-    icon: string;
-    category: string;
-  };
+  name: string;
+  icon: any;
+  color: string;
 }
 
-export default function SkillCard({ skill }: Props) {
+export default function SkillCard({
+  name,
+  icon: Icon,
+  color,
+}: Props) {
   return (
     <motion.div
       whileHover={{
-        y: -10,
-        scale: 1.03,
+        y: -8,
+        scale: 1.05,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 18,
       }}
       className="
-      rounded-3xl
+      group
+      rounded-2xl
       border
-      border-zinc-700
-      bg-zinc-900/70
-      p-8
-      backdrop-blur-xl
+      border-white/10
+      bg-white/5
+      p-6
+      backdrop-blur-md
       transition-all
-      hover:border-cyan-400
-      hover:shadow-[0_0_40px_rgba(0,217,255,.25)]
+      duration-300
+      hover:border-cyan-400/40
+      hover:shadow-[0_0_25px_rgba(0,217,255,.18)]
       "
     >
-      <div className="mb-5 text-5xl">
-        {skill.icon}
+      <div className="flex flex-col items-center gap-4">
+        <Icon
+          size={48}
+          color={color}
+          className="transition duration-300 group-hover:scale-110"
+        />
+
+        <h3 className="text-center text-sm font-semibold text-white">
+          {name}
+        </h3>
       </div>
-
-      <CircularProgress
-        value={skill.percentage}
-        color={skill.color}
-      />
-
-      <h3 className="mt-6 text-2xl font-bold text-white">
-        {skill.title}
-      </h3>
-
-      <p className="mt-2 text-gray-400">
-        {skill.category}
-      </p>
     </motion.div>
   );
 }

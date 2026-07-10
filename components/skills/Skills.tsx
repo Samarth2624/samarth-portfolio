@@ -2,54 +2,54 @@
 
 import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
-import { skills } from "./skillsData";
+import { skillCategories } from "./data";
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-32 px-6"
+      className="relative mx-auto max-w-7xl px-6 py-32"
     >
-      <div className="mx-auto max-w-7xl">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-20 text-center"
+      >
+        <p className="mb-3 uppercase tracking-[8px] text-cyan-400">
+          Tech Stack
+        </p>
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="mb-20 text-center"
-        >
-          <p className="tracking-[.4em] text-cyan-400 uppercase">
-            ENGINEERING CAPABILITIES
-          </p>
+        <h2 className="text-5xl font-black text-white">
+          Technologies I Work With
+        </h2>
 
-          <h2 className="mt-5 text-6xl font-black text-white">
-            Skills Dashboard
-          </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-gray-400">
+          A collection of technologies, tools, and platforms I use to build
+          embedded systems, automation solutions, AI applications, and modern web experiences.
+        </p>
+      </motion.div>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-400">
-            Technologies and engineering tools that I have worked
-            with across embedded systems, industrial automation,
-            software development, and AI.
-          </p>
-        </motion.div>
+      <div className="space-y-16">
+        {skillCategories.map((category) => (
+          <div key={category.title}>
+            <h3 className="mb-8 text-2xl font-bold text-white">
+              {category.title}
+            </h3>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {skills.map((skill) => (
-            <SkillCard
-              key={skill.title}
-              skill={skill}
-            />
-          ))}
-        </div>
-
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+              {category.skills.map((skill) => (
+                <SkillCard
+                  key={skill.name}
+                  name={skill.name}
+                  icon={skill.icon}
+                  color={skill.color}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
