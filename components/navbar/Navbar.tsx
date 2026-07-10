@@ -125,7 +125,7 @@ export default function Navbar() {
           {/* Resume */}
 
           <motion.a
-            href="/resume.pdf"
+            href="/resumes.pdf"
             download
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
@@ -171,7 +171,7 @@ export default function Navbar() {
             ))}
 
             <motion.a
-              href="/resume.pdf"
+              href="/resumes.pdf"
               download
               whileHover={{ scale: 1.05 }}
               className="rounded-full border border-cyan-400 px-8 py-4 text-cyan-400"
