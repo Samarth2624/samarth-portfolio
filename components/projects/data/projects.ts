@@ -92,7 +92,7 @@ value:"Automation Studio"
 
 ],
 
-github:"#"
+github:"https://github.com/Samarth2624/Box-Lift-Automation-B-R-"
 
 },
 
@@ -188,7 +188,7 @@ value:"Machine Learning"
 
 ],
 
-github:"#"
+github:"https://github.com/Samarth2624/ShadowFox"
 
 }
 
