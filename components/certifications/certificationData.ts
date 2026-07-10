@@ -1,11 +1,32 @@
-export const certifications = [
-  "ASDC xEV Shiksha",
-
-  "ASDC EV Charging",
-
-  "ASDC Charger Installation",
-
-  "ShadowFox Data Science",
-
-  "PLC Automation Training",
+export const certificates = [
+{
+title:"ASDC xEV Shiksha",
+issuer:"ASDC",
+file:"/certificates/asdc-xev-shiksha.pdf"
+},
+{
+title:"EV Charging Installation to Activation",
+issuer:"ASDC",
+file:"/certificates/ev-charging.pdf"
+},
+{
+title:"Level-1 Charger Certification",
+issuer:"ASDC",
+file:"/certificates/level1-charger.pdf"
+},
+{
+title:"ShadowFox Data Science Internship",
+issuer:"ShadowFox",
+file:"/certificates/shadowfox.pdf"
+},
+{
+title:"B&R Industrial Automation",
+issuer:"B&R",
+file:"/certificates/br-automation.pdf"
+},
+{
+title:"EV Training Program",
+issuer:"GTT FOUNDATION",
+file:"/certificates/ev-training.pdf"
+}
 ];
