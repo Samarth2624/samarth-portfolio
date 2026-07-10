@@ -56,7 +56,7 @@ export default function Resume() {
 
             <a
 
-              href="/resume.pdf"
+              href="/resumes.pdf"
 
               className="
               rounded-xl
@@ -82,7 +82,7 @@ export default function Resume() {
 
             <a
 
-              href="/resume.pdf"
+              href="/resumes.pdf"
 
               target="_blank"
 
