@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    value: "08",
+    value: "04",
     label: "Projects",
   },
   {
-    value: "03",
+    value: "02",
     label: "Internships",
   },
   {
-    value: "06",
+    value: "05",
     label: "Certificates",
   },
   {
-    value: "300+",
+    value: "25+",
     label: "LeetCode Problems",
   },
 ];

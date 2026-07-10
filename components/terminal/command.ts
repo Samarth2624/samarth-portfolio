@@ -63,7 +63,7 @@ B&R Industrial Automation
 
 ShadowFox Data Science Internship
 
-Digital Marketing Internship
+
 
 `,
 

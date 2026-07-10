@@ -29,16 +29,7 @@ export const skillCategories = [
     ],
   },
 
-  {
-    title: "Web Development",
-    skills: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
-      { name: "FastAPI", icon: SiFastapi, color: "#00C7B7" },
-    ],
-  },
+  
 
   {
     title: "Embedded Systems",

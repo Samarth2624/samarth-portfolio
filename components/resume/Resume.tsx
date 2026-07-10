@@ -128,7 +128,7 @@ export default function Resume() {
 
             <a
 
-              href="YOUR LINKEDIN"
+              href="https://www.linkedin.com/in/samarth-phakatkar-377677294"
 
               target="_blank"
 
