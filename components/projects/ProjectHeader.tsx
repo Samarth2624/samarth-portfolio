@@ -1,6 +1,6 @@
 "use client";
 
-import { Cpu, Factory, BrainCircuit } from "lucide-react";
+import { Cpu, Factory, BrainCircuit, Webhook } from "lucide-react";
 import type { Project } from "./types";
 
 interface Props {
@@ -18,6 +18,9 @@ export default function ProjectHeader({ project }: Props) {
 
       case "ai":
         return <BrainCircuit size={22} className="text-purple-400" />;
+      
+        case "web":
+        return <Webhook size={22} className="text-red-400" />;
     }
   };
 
