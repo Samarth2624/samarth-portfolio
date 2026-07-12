@@ -5,6 +5,18 @@ import { Award, ExternalLink } from "lucide-react";
 
 const certificates = [
   {
+    title:"AI Fluency: Frameworks & Foumdations",
+    issuer:"ANTHROPIC",
+    year: "2026",
+    file:"/certificates/ai-fluency.pdf"
+  },
+  {
+    title:"Claude 101",
+    issuer:"ANTHROPIC",
+    year: "2026",
+    file:"/certificates/claude-101.pdf"
+  },
+  {
     title: "ASDC xEV Shiksha",
     issuer: "Automotive Skills Development Council",
     year: "2025",
