@@ -1,5 +1,15 @@
 export const certificates = [
 {
+title:"AI Fluency: Frameworks & Foumdations",
+issuer:"ANTHROPIC",
+file:"/certificates/ai-fluency.pdf"
+},
+{
+title:"Claude 101",
+issuer:"ANTHROPIC",
+file:"/certificates/claude-101.pdf"
+},
+{
 title:"ASDC xEV Shiksha",
 issuer:"ASDC",
 file:"/certificates/asdc-xev-shiksha.pdf"
