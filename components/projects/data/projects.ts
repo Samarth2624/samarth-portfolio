@@ -28,8 +28,8 @@ value:"ESP32"
 },
 
 {
-label:"Cloud",
-value:"Firebase"
+label:"IoT",
+value:"Blynk"
 },
 
 {
@@ -135,7 +135,7 @@ value:"Flex Sensors"
 
 {
 label:"Communication",
-value:"Bluetooth"
+value:"WiFi"
 }
 
 ],

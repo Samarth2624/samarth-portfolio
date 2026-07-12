@@ -180,7 +180,7 @@ export default function ProjectCard({ project }: Props) {
 
         {/* Floating LEDs */}
 
-        <div className="absolute right-6 top-6 z-30 flex gap-2">
+        <div className="absolute right-6 bottom-6 z-30 flex gap-2">
           <div
             className="h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse"
             style={{
