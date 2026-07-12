@@ -6,7 +6,8 @@ export interface ProjectMetric {
 export type ProjectType =
   | "embedded"
   | "automation"
-  | "ai";
+  | "ai"
+    | "web";
 
 export interface Project {
 
@@ -55,6 +56,12 @@ export const ProjectColors = {
     glow:"rgba(168,85,247,.35)",
     badge:"text-purple-300",
     border:"border-purple-400/30"
-  }
+  },
+  web: {
+  primary: "#3b82f6",
+  glow: "rgba(59,130,246,.35)",
+  badge: "text-blue-300",
+  border: "border-blue-400/30"
+}
 
 };

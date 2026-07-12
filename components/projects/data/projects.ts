@@ -190,6 +190,51 @@ value:"Machine Learning"
 
 github:"https://github.com/Samarth2624/ShadowFox"
 
+},
+{
+  title: "Harshvardhan Villa",
+
+  category: "Web Development",
+
+  status: "ONLINE",
+  live: "https://harshvardhan-villa.vercel.app/",
+
+  type: "web",
+
+  description:
+    "A modern luxury villa booking website featuring an elegant UI, responsive design, interactive gallery, amenities showcase, booking section, customer reviews, and smooth animations. Built with a focus on performance, user experience, and premium aesthetics.",
+
+  tech: [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Responsive Design"
+  ],
+
+  metrics: [
+    {
+      label: "Frontend",
+      value: "HTML • CSS • JS"
+    },
+
+    {
+      label: "Design",
+      value: "Responsive UI"
+    },
+
+    {
+      label: "Features",
+      value: "Booking & Gallery"
+    },
+
+    {
+      label: "Deployment",
+      value: "GitHub & Vercel"
+    }
+  ],
+
+  github: "https://github.com/Samarth2624/Harshvardhan-villa"
+
 }
 
 ];
